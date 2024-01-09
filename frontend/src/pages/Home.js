@@ -8,7 +8,7 @@ const Home = () => {
       <div className="headerDiv">
         <p>Invoice Builder</p>
         <button>
-          <Link to="/builder" style={{ textDecoration:"none", color:"black" }}>
+          <Link to="/build" style={{ textDecoration:"none", color:"black" }}>
             <p>Build Invoice</p>
           </Link>
         </button>

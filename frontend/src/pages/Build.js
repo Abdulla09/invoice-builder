@@ -1,6 +1,8 @@
 import { useState } from "react"
 import jsPDF from "jspdf"
 import html2pdf from "html2pdf.js"
+import "../css/build.css"
+import logo from "../images/invoicelogo.svg"
 const Build = ()=>{
 
   const [name, setName] = useState("")
@@ -11,7 +13,6 @@ const Build = ()=>{
   }
 
   const createPdf = ()=>{
-    var doc = new jsPDF()
 
     var source = document.querySelector(".buildDiv")
 
@@ -23,14 +24,46 @@ const Build = ()=>{
   }
 
   return(
-    <div>
+    <main>
 
     <div className="invoiceDiv">
       <nav>
+        <img src={logo} alt="logo" />
       </nav>
+    
+    <div className="buildDiv">
       <div className="header">
-      <p>Invoice Builder</p> 
+        <div>
+          <p>Build Invoice</p>
+        </div>
       </div>
+
+      <div className="billDiv">
+        <div className="billHeader">
+          <p>BILL FROM</p>
+        </div>
+        <div className="billInnerDiv">
+          <div>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Email" />
+            <input type="text" placeholder="Phone Number" />
+            <textarea placeholder="Address" rows="4" />
+          </div>
+          <div>
+          <input type="text" placeholder="Date" onFocus={(e) => (e.target.type = "date")}
+        onBlur={(e) => (e.target.type = "text")} />
+          <input type="text" placeholder="Due Date" onFocus={(e) => (e.target.type = "date")}
+        onBlur={(e) => (e.target.type = "text")} />          <div>
+
+          </div>
+          <div className="fileDiv">
+            <p>Browse for Logo</p>
+            <p>JPEG, PNG, SVG formats, up to 5MB</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <form onSubmit={handleSubmit}>
     <label name="fname">Name</label>
@@ -46,12 +79,12 @@ const Build = ()=>{
     
     </div>
 
-    <div className="buildDiv">
+    <div className="buildDi">
       <p>{name}</p>
       <p>{email}</p>
     </div>
 
-    </div>
+    </main>
   )
 }
 

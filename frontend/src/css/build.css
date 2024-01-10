@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@500&display=swap');
+
+.invoiceDiv{
+  width: 100%;
+}
+
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+nav img{
+  width: 12%;
+}
+
+.buildDiv{
+  width: 100%;
+  background-color: #0A150F;
+  padding: 1.5em 2em;
+}
+
+.header{
+  width: 100%;
+  display: flex;
+}
+
+.header p{
+  font-family: "Roboto";
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.billDiv{
+  width: 50%;
+  margin: 3em 0;
+}
+
+.billHeader{
+  width: fit-content;
+  background-color: #97F675;
+  padding: 0.2em 1rem;
+}
+
+.billHeader{
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.billInnerDiv{
+  width: 100%;
+  padding: 1em;
+  background-color: white;
+  display: flex;
+  /* gap: 1em; */
+}
+
+.billInnerDiv >div{
+  padding: 1em 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.billInnerDiv div>input,.billInnerDiv div>textarea{
+  width: 85%;
+  border-radius: 0.25rem;
+  border: 0.5px solid #C2C2C2;
+  background: #FBFBFB;
+  padding: 0.5em 0.5em;
+}
+
+.billInnerDiv div>input::placeholder,.billInnerDiv div>textarea::placeholder{
+  font-family: "Montserrat";
+  font-weight: 500; 
+  font-size: 1em;
+  color: black;
+}
+
+.fileDiv{
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23BCBCBC' stroke-width='2' stroke-dasharray='6%2c6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fileDiv>p:nth-child(1){
+  color: #292D32;
+  font-size: 1.2rem;
+}
+
+.fileDiv>p:nth-child(2){
+  color: #A9ACB4;
+  font-size: 0.7rem;
+}
+

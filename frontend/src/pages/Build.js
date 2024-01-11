@@ -1,9 +1,16 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import jsPDF from "jspdf"
 import html2pdf from "html2pdf.js"
 import "../css/build.css"
 import logo from "../images/invoicelogo.svg"
+import Dropdown from "../components/Dropdown.js"
 const Build = ()=>{
+
+  const fileInputRef = useRef(null);
+
+  const handleFileDivClick = () => {
+      fileInputRef.current.click();
+  };
 
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -33,36 +40,65 @@ const Build = ()=>{
     
     <div className="buildDiv">
       <div className="header">
-        <div>
-          <p>Build Invoice</p>
-        </div>
+          <p>Invoicing Made Simple with <span>EasyInvoice</span></p>
+          <p>Generate an online bill with our free invoice creator in moments.</p>
       </div>
 
       <div className="billDiv">
-        <div className="billHeader">
-          <p>BILL FROM</p>
-        </div>
         <div className="billInnerDiv">
-          <div>
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Email" />
-            <input type="text" placeholder="Phone Number" />
-            <textarea placeholder="Address" rows="4" />
-          </div>
-          <div>
-          <input type="text" placeholder="Date" onFocus={(e) => (e.target.type = "date")}
-        onBlur={(e) => (e.target.type = "text")} />
-          <input type="text" placeholder="Due Date" onFocus={(e) => (e.target.type = "date")}
-        onBlur={(e) => (e.target.type = "text")} />          <div>
+          <div className="billDetailsDiv">
+            <div>
+              <div className="InvoicePurchaseDiv">
+                <div>
+                  <label>Invoice number</label>
+                  <input type="text"></input>
+                </div>
+                <div>
+                  <label>Purchase order</label>
+                  <input type="text"></input>
+                </div>
+              </div>
+
+              <div className="companyDetailsDiv">
+                <label>Your company details</label>
+                <textarea rows="6"></textarea>
+              </div>
+
+              <div className="currencyDiv">
+                <label>Currency</label>
+                <Dropdown />
+              </div>
+            </div>
+
+            <div>
+              <div>
+                
+              </div>
+
+              <div>
+                <textarea></textarea>
+              </div>
+
+              <div>
+                <label for="currency">Currency</label>
+
+                <select name="currency" id="currency">
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="mercedes">Mercedes</option>
+                  <option value="audi">Audi</option>
+                </select>
+              </div>
+            </div>
+            
 
           </div>
-          <div className="fileDiv">
-            <p>Browse for Logo</p>
-            <p>JPEG, PNG, SVG formats, up to 5MB</p>
-          </div>
+          <div>
+
           </div>
         </div>
       </div>
+
     </div>
 
     <form onSubmit={handleSubmit}>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300;500&display=swap');
 
 .invoiceDiv{
   width: 100%;
@@ -19,54 +19,110 @@ nav img{
 .buildDiv{
   width: 100%;
   background-color: #0A150F;
-  padding: 1.5em 2em;
+  padding: 3em 2em;
 }
 
 .header{
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1em;
 }
 
-.header p{
-  font-family: "Roboto";
-  font-size: 2.5rem;
+.header p:nth-child(1){
+  font-family: "Montserrat";
+  font-size: 2.3rem;
   color: #fff;
 }
 
-.billDiv{
-  width: 50%;
-  margin: 3em 0;
-}
-
-.billHeader{
-  width: fit-content;
-  background-color: #97F675;
-  padding: 0.2em 1rem;
-}
-
-.billHeader{
+.header span{
   font-family: "Montserrat";
+  font-size: 2.5rem;
   font-weight: 700;
-  font-size: 1.5rem;
+  color: #97F675;
+}
+
+.header p:nth-child(2){
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #97F675;
+}
+
+.billDiv{
+  width: 65%;
+  margin: 3em auto 0em;
 }
 
 .billInnerDiv{
   width: 100%;
   padding: 1em;
   background-color: white;
-  display: flex;
+  border-radius: 2rem;
+  padding: 2em 3em;
   /* gap: 1em; */
 }
 
-.billInnerDiv >div{
-  padding: 1em 0;
+.billDetailsDiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.billDetailsDiv > div{
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.2em;
+  justify-content: center;
+  align-items: center;
+  gap:2.5em;
 }
 
-.billInnerDiv div>input,.billInnerDiv div>textarea{
+.billDetailsDiv label{
+  font-size: 0.9rem;
+  color: #464646;
+}
+
+.billDetailsDiv input,.billDetailsDiv textarea{
+  margin-top: 0.5em;
+  width: 100%;
+  padding: 1em 0.5em;
+  border-radius: 0.5em;
+  border: 1.5px solid #8e8e8e;
+}
+
+.antSelect{
+  margin-top:0.5em;
+}
+
+.ant-select-selector{
+  border: 1.5px solid #8e8e8e !important;
+  box-shadow:none !important;
+}
+
+.InvoicePurchaseDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.companyDetailsDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.currencyDiv{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* .billInnerDiv div>input,.billInnerDiv div>textarea{
   width: 85%;
   border-radius: 0.25rem;
   border: 0.5px solid #C2C2C2;
@@ -102,3 +158,15 @@ nav img{
   font-size: 0.7rem;
 }
 
+.fileDiv>input{
+  display: none;
+}
+
+.right{
+  margin-left: 40%;
+}
+
+.headerRight{
+  float: right;
+  padding: 0.2em 2rem;
+} */

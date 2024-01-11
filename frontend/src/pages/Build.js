@@ -6,9 +6,26 @@ import logo from "../images/invoicelogo.svg"
 import Dropdown from "../components/Dropdown.js"
 import Date from "../components/Date.js"
 import downloadIcon from "../images/downloadIcon.svg"
+import dayjs from 'dayjs';
+import { DatePicker } from 'antd';
+
+
 const Build = ()=>{
 
   const fileInputRef = useRef(null);
+
+  const [invoiceDate, setInvoiceDate] = useState(dayjs());
+
+  const disabledDate = (todaysDate) => {
+    return todaysDate < invoiceDate.subtract(0, 'day');
+  };
+
+  const handleInvoiceDateChange = (date) => {
+    setInvoiceDate(date);
+  };
+
+
+  
 
   const handleFileDivClick = () => {
       fileInputRef.current.click();
@@ -94,11 +111,11 @@ const Build = ()=>{
               <div className="dateDiv">
                 <div>
                   <label>Date</label>
-                  <Date />
+                  <DatePicker defaultValue={invoiceDate} onChange={handleInvoiceDateChange} />
                 </div>
                 <div>
                   <label>Due date</label>
-                  <Date />
+                  <DatePicker disabledDate={disabledDate} />
                 </div>
               </div>
             </div>            

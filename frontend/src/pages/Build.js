@@ -4,6 +4,8 @@ import html2pdf from "html2pdf.js"
 import "../css/build.css"
 import logo from "../images/invoicelogo.svg"
 import Dropdown from "../components/Dropdown.js"
+import Date from "../components/Date.js"
+import downloadIcon from "../images/downloadIcon.svg"
 const Build = ()=>{
 
   const fileInputRef = useRef(null);
@@ -47,8 +49,8 @@ const Build = ()=>{
       <div className="billDiv">
         <div className="billInnerDiv">
           <div className="billDetailsDiv">
-            <div>
-              <div className="InvoicePurchaseDiv">
+            <div className="InvoicePurchaseLogoDiv">
+              <div>
                 <div>
                   <label>Invoice number</label>
                   <input type="text"></input>
@@ -58,42 +60,48 @@ const Build = ()=>{
                   <input type="text"></input>
                 </div>
               </div>
+              <div className="logoDiv">
+                <label>Logo</label>
+                <div>
+                  <img src={downloadIcon} alt="downloadIcon" />
+                  <p>Choose a file or drag & drop it here</p>
+                  <p>JPG, JPEG, PNG formats, up to 5MB</p>
+                </div>
+              </div>
+            </div>
 
-              <div className="companyDetailsDiv">
+            <div className="billToFromDiv">
+              <div>
                 <label>Your company details</label>
-                <textarea rows="6"></textarea>
+                <textarea rows="5">
+                </textarea>
               </div>
 
+              <div>
+                <label>Bill to</label>
+                <textarea rows="5">
+                </textarea>
+              </div>
+
+            </div>
+
+            <div className="currencyDateDiv">
               <div className="currencyDiv">
-                <label>Currency</label>
-                <Dropdown />
-              </div>
-            </div>
-
-            <div>
-              <div>
-                
+              <label>Currency</label>
+              <Dropdown />
               </div>
 
-              <div>
-                <textarea></textarea>
+              <div className="dateDiv">
+                <div>
+                  <label>Date</label>
+                  <Date />
+                </div>
+                <div>
+                  <label>Due date</label>
+                  <Date />
+                </div>
               </div>
-
-              <div>
-                <label for="currency">Currency</label>
-
-                <select name="currency" id="currency">
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </div>
-            </div>
-            
-
-          </div>
-          <div>
+            </div>            
 
           </div>
         </div>

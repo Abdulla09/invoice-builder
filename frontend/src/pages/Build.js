@@ -3,8 +3,9 @@ import jsPDF from "jspdf"
 import html2pdf from "html2pdf.js"
 import "../css/build.css"
 import logo from "../images/invoicelogo.svg"
+import deleteIcon from "../images/deleteIcon.svg"
+import addIcon from "../images/addIcon.svg"
 import Dropdown from "../components/Dropdown.js"
-import Date from "../components/Date.js"
 import downloadIcon from "../images/downloadIcon.svg"
 import dayjs from 'dayjs';
 import { DatePicker } from 'antd';
@@ -121,6 +122,37 @@ const Build = ()=>{
             </div>            
 
           </div>
+
+          <div className="itemDetailsDiv">
+            <div className="itemDiv">
+              <div className="itemInputDiv largeInput">
+                <label>Item description</label>
+                <input type="text" />
+              </div>
+              <div className="itemInputDiv smallInput">
+                <label>Unit cost</label>
+                <input type="text" />
+              </div>
+              <div className="itemInputDiv smallInput">
+                <label>Quantity</label>
+                <input type="text" />
+              </div>
+              <div className="Amount smallInput">
+                <label>Amount</label>
+                <input type="text" />
+              </div>
+              <div className="deleteIcon">
+                <div>
+                  <img src={deleteIcon}></img>
+                </div>
+              </div>
+            </div>
+            <div className="addIconDiv">
+              <img src={addIcon} />
+              <p>Add item</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
